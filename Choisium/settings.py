@@ -27,6 +27,15 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+if os.environ.get('SECRET_KEY', False):
+    SECRET_KEY = os.environ['SECRET_KEY']
+    DEBUG = False
+    ALLOWED_HOSTS = ['www.choisium.com', 'choisium.com']
+else:
+    SECRET_KEY = '@fen*f+*l-gn0(@6ci@r-&ziz1d!r9_80g4y$qa%zpnh@2o!$9'
+    DEBUG = True
+    ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 
@@ -105,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -118,3 +127,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
