@@ -1,4 +1,4 @@
-# choisium's homepage
+# Choisium's Laboratory
 ## Developer
 * Soomin Choi (choisium, crowtit)
 

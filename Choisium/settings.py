@@ -20,19 +20,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_9dlly)rfjnh-jm2$a(v1yi%%e3b6epcan=o50kj3dya#nc+^k'
-
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
-
-if os.environ.get('SECRET_KEY', False):
-    SECRET_KEY = os.environ['SECRET_KEY']
+if os.environ.get('CHOISIUM_SECRET_KEY', False):
+    SECRET_KEY = os.environ['CHOISIUM_SECRET_KEY']
     DEBUG = False
     ALLOWED_HOSTS = ['www.choisium.com', 'choisium.com']
 else:
-    SECRET_KEY = '@fen*f+*l-gn0(@6ci@r-&ziz1d!r9_80g4y$qa%zpnh@2o!$9'
+    SECRET_KEY = '_9dlly)rfjnh-jm2$a(v1yi%%e3b6epcan=o50kj3dya#nc+^k'
     DEBUG = True
     ALLOWED_HOSTS = ['*']
 
